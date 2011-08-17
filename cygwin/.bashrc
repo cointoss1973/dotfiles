@@ -15,6 +15,7 @@ PATH=./:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/bin:$PATH
 export PATH
 export PAGER=lv
 #export EDITOR=meadow
+export EDITOR=emacs
 
 #PS1="\w/\t> "
 
@@ -31,5 +32,5 @@ alias ll="ls -l"
 alias ls="ls -CF --color=auto"
 alias cp="cp -vip"
 alias mv="mv -vi"
-alias rm="rm -vi"
+#alias rm="rm -vi"
 
