@@ -1,0 +1,3 @@
+#!/bin/bash
+for file in $(find cygwin -name ".*"); do cp -p $file ~/ ; done
+echo please log off or source ~/.bashrc_profile
