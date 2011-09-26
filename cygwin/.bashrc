@@ -11,11 +11,12 @@ export MAKE_MODE=unix
 #export LANG=ja_JP.SJIS
 export LANG=ja_JP.UTF-8
 
-PATH=./:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/bin:$PATH
+#PATH=./:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/bin:$PATH
+PATH=/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/bin:/cygdrive/c/Meadow/bin:$PATH
 export PATH
 export PAGER=lv
-#export EDITOR=meadow
-export EDITOR=emacs
+export EDITOR=meadow
+#export EDITOR=emacs
 
 #PS1="\w/\t> "
 
@@ -28,9 +29,21 @@ if [ ! -n "${TERM}" ]; then
 fi
 
 alias la="ls -aF"
-alias ll="ls -l"
+alias ll="ls -al"
 alias ls="ls -CF --color=auto"
-alias cp="cp -vip"
-alias mv="mv -vi"
+#alias cp="cp -vip"
+#alias mv="mv -vi"
 #alias rm="rm -vi"
+alias more="less"
+alias v=$EDITOR
 
+alias h="history"
+
+# GNU Global
+funcs()
+{
+    local cur
+    cur=${COMP_WORDS[COMP_CWORD]}
+    COMPREPLY=(`global -c $cur`)
+}
+complete -F funcs global
