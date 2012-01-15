@@ -1,0 +1,43 @@
+# recommended .hgrc 
+# http://troter.jp/scmbc-201111-mercurial-introsession/
+[ui]
+# Mercurialが利用するユーザ名を設定してください。
+#username = Your Name <your.name@example.com>
+Takayuki KONDO <tkondou@gmail.com>
+
+[extensions]
+bookmarks =
+color =
+graphlog =
+mq =
+pager =
+progress =
+rebase =
+record =
+transplant =
+
+[alias]
+#_status = status
+#st = ! $HG _status $($HG root) $HG_ARGS
+
+# branch
+b = branch
+#bs = branches -a
+
+# resolve
+mark = resolve -m
+unmark = resolve -u
+conflicts = resolve -l
+uselocal = resolve --tool internal:local
+useother = resolve --tool internal:other
+
+# push
+nudge = push --rev .
+#push = ! echo -e "\033[31m(use 'hg nudge' to push changesets)\033[m"
+
+[pager]
+attend = annotate, cat, diff, export, glog, log, qdiff, help
+
+[diff]
+git = True
+
