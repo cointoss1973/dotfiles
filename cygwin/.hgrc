@@ -3,7 +3,7 @@
 [ui]
 # Mercurialが利用するユーザ名を設定してください。
 #username = Your Name <your.name@example.com>
-Takayuki KONDO <tkondou@gmail.com>
+username = Takayuki KONDO <tkondou@gmail.com>
 
 [extensions]
 bookmarks =
