@@ -4,6 +4,12 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+# bash completion for the Mercurial distributed SCM
+if [ -f ~/hgrepo/hg/contrib/bash_completion ]; then
+	. ~/hgrepo/hg/contrib/bash_completion
+fi
+
+
 export SHELL=/bin/bash
 export TMPDIR=/tmp
 export TZ=JST-09
@@ -47,3 +53,4 @@ funcs()
     COMPREPLY=(`global -c $cur`)
 }
 complete -F funcs global
+
