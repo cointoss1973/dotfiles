@@ -1,6 +1,11 @@
 #!/bin/bash
-for file in $(find cygwin -name ".*"); do 
-    cp -p $file ~/
-    echo "$file -> ~/"
+
+DOT_FILES=( .bash_profile  .bashrc  .emacs  .gitconfig  .hgrc  .minttyrc )
+
+for file in ${DOT_FILES[@]}
+do
+    rm $HOME/$file
+    ln -s $HOME/dotfiles/$file $HOME/$file
 done
-echo please log off or source ~/.bashrc_profile
+
+echo please log off or source ~/.bash_profile

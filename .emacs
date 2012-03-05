@@ -1,13 +1,13 @@
-;; MULE-UCS
-;(require 'un-define)
-;(require 'jisx0213)
+;; Mule-UCS
+(require 'un-define)
+(require 'jisx0213)
 ;; japanese 
 (set-language-environment "Japanese")
-(set-terminal-coding-system 'utf-8-dos)
-(set-default-coding-systems 'utf-8-dos)
-(set-buffer-file-coding-system 'utf-8-dos)
+(set-terminal-coding-system 'sjis)
+(set-default-coding-systems 'utf-8)
+(set-buffer-file-coding-system 'utf-8)
 ;;
-;;(set-selection-coding-system 'utf-16le-dos)
+;;(set-selection-coding-system 'utf-16le)
 
 ;; 
 (global-font-lock-mode t)
