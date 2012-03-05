@@ -1,12 +1,14 @@
 #!/bin/bash
 
-DOT_FILES=( .bash_profile  .bashrc  .emacs  .gitconfig  .hgrc  .minttyrc .vimrc )
 
-for file in ${DOT_FILES[@]}
+DOT_FILES=$(ls -a dot/.??*)   # at least 3words...
+
+for src in ${DOT_FILES[@]}
 do
-    rm -f $HOME/$file
-    ln -s $HOME/dotfiles/$file $HOME/$file
-    echo dotfiles/$file "->" $HOME/$file
+    dst=${src##*/}
+    rm -f $HOME/$dst
+    ln -s $HOME/dotfiles/$src $HOME/$dst
+    echo dotfiles/$src "->" $HOME/$dst
 done
 
 echo "please log off or source ~/.bash_profile"
