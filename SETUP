@@ -1,10 +1,10 @@
 #!/bin/bash
 
-DOT_FILES=( .bash_profile  .bashrc  .emacs  .gitconfig  .hgrc  .minttyrc )
+DOT_FILES=( .bash_profile  .bashrc  .emacs  .gitconfig  .hgrc  .minttyrc .vimrc )
 
 for file in ${DOT_FILES[@]}
 do
-    rm $HOME/$file
+    rm -f $HOME/$file
     ln -s $HOME/dotfiles/$file $HOME/$file
     echo dotfiles/$file "->" $HOME/$file
 done
