@@ -8,7 +8,6 @@ fontoutputlog = MS UI Gothic,11,-1,5,50,0,0,0,0,0
 vdiff = winmergeu
 shell = c:\console2\console.exe
 editor = "C:\Program Files\sakura\sakura.exe"
-issue.bugtraqparameters = http://redmine.jeol.co.jp/projects/project00058/issues.atom?key=602655233f3ddc8e6e62c855e12aabb6357a9f93
 
 
 [web]
@@ -21,12 +20,17 @@ bookmarks =
 color =
 graphlog =
 mq =
-pager =
 rebase =
-svn=~/hgrepo/hgsubversion/hgsubversion
+svn=~/hgext/hgsubversion/hgsubversion
 purge = 
 win32mbcs = 
 convert = 
+record =
+info =~/hgext/info.py
+#wincolor = ~/hgext/wincolor/wincolor.py
+###pager =
+tpager = ~/hgext/tpager/tpager.py
+
 
 [alias]
 #_status = status
@@ -48,13 +52,22 @@ nudge = push --rev .
 #push = ! echo -e "\033[31m(use 'hg nudge' to push changesets)\033[m"
 
 [pager]
-attend = annotate, cat, diff, export, glog, log, qdiff, help
-pager = LESS='-FRSX' less
+attend = annotate, cat, diff, export, glog, help, log, qdiff, status, tip
+hg16mode = yes
+
+; full path to the executable
+#pager = LESS='-FRSX' less
+pager = C:\msysgit\msysgit\bin\less.exe -f -FRSX
+#pager = C:\less-418-utf8-bin\less.exe -FRSX
+#pager = "C:\Program Files\Gow\bin\less.exe" 
+#pager = "C:\Program Files\GnuWin32\bin\less.exe"
+#pager = lv 
+
 
 [diff]
 git = True
 
 [color]
 # valid modes are win32, ansi, auto, off
-mode = win32
+mode = auto
 
