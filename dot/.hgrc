@@ -2,15 +2,10 @@
 username = tkondou <tkondou@jeol.co.jp>
 merge = kdiff3
 
-[http_proxy]
-host = i-net.jeol.co.jp:80
-no = *.jeol.co.jp
-
 [tortoisehg]
 ui.language = ja
 fontoutputlog = MS UI Gothic,11,-1,5,50,0,0,0,0,0
 vdiff = winmergeu
-issue.bugtraqplugin = {55B7DC40-2D4A-46AB-8884-329A02D26EDE} TortoiseRedmine (1.1.08)
 shell = c:\console2\console.exe
 editor = "C:\Program Files\sakura\sakura.exe"
 issue.bugtraqparameters = http://redmine.jeol.co.jp/projects/project00058/issues.atom?key=602655233f3ddc8e6e62c855e12aabb6357a9f93
