@@ -14,8 +14,8 @@ export SHELL=/bin/bash
 export TMPDIR=/tmp
 export TZ=JST-09
 export MAKE_MODE=unix
-export LANG=ja_JP.SJIS
-#export LANG=ja_JP.UTF-8
+#export LANG=ja_JP.SJIS
+export LANG=ja_JP.UTF-8
 ##export LESSCHARSET=utf-8
 
 #PATH=./:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/bin:$PATH
