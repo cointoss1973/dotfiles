@@ -14,15 +14,15 @@ export SHELL=/bin/bash
 export TMPDIR=/tmp
 export TZ=JST-09
 export MAKE_MODE=unix
-#export LANG=ja_JP.SJIS
-export LANG=ja_JP.UTF-8
+export LANG=ja_JP.SJIS
+#export LANG=ja_JP.UTF-8
+##export LESSCHARSET=utf-8
 
 #PATH=./:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/bin:$PATH
 PATH=/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/bin:/cygdrive/c/Meadow/bin:$PATH
 export PATH
-export PAGER=lv
+export PAGER=less
 export EDITOR=meadow
-#export EDITOR=emacs
 
 #PS1="\w/\t> "
 
