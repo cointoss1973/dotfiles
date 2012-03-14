@@ -1,14 +1,12 @@
 #!/bin/bash
 
 
-DOT_FILES=$(find dot -name .\*)
-
-for src in ${DOT_FILES[@]}
+for src in `find dot -name .\*`
 do
     dst=${src##*/}
-    rm -f $HOME/$dst
-    ln -s $HOME/dotfiles/$src "$HOME/$dst"
+    rm -f "$HOME/$dst"
     echo dotfiles/$src "->" $HOME/$dst
+    ln -s "$HOME/dotfiles/$src" "$HOME/$dst"
 done
 
 echo "please log off or source ~/.bash_profile"
