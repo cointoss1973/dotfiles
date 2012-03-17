@@ -2,19 +2,19 @@
 
 ARCH=$(uname -s)-$(uname -m)
 
-function copy_dotfiles
+function diff_dotfiles
 {
-	DOT_FILES=$(ls -a dot/.??*)   # at least 3words...
- 	for dst in ${DOT_FILES[@]}
+ 	for dst in `find dot -name .\*`
 	do
 		src=${dst##*/}
+		echo === $src ===
 		diff $HOME/$src $HOME/dotfiles/$dst
 	done
 }
 
 if [[ $ARCH = MINGW* ]]; then
 	# Oh... No support symblic link system
-	copy_dotfiles
+	diff_dotfiles
 else
 	echo No Need. Maybe symbolic link support system.
 fi
