@@ -36,7 +36,7 @@ fi
 
 alias la="ls -aF"
 alias ll="ls -al"
-alias ls="ls -CF --color=auto"
+alias ls="ls -CF --color=auto --show-control-chars"
 #alias cp="cp -vip"
 #alias mv="mv -vi"
 #alias rm="rm -vi"
