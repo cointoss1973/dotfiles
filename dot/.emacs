@@ -1,48 +1,49 @@
-;; Mule-UCS
-(require 'un-define)
-(require 'jisx0213)
-;; japanese 
-(set-language-environment "Japanese")
-(set-terminal-coding-system 'sjis)
-(set-default-coding-systems 'utf-8)
-(set-buffer-file-coding-system 'utf-8)
-;;
-;;(set-selection-coding-system 'utf-16le)
+; -*- coding : utf-8 -*-
 
-;; 
-(global-font-lock-mode t)
-(set-scroll-bar-mode 'right)
-
-;; add emacs lisp directory
-(add-to-list 'load-path "~/.emacs.d")
-
-;; Check if we are on my Windows 7 box
-(setq is-windows (string= system-type "windows-nt"))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; load-path に追加する
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(setq load-path
+      (append
+       (list
+	(expand-file-name "~/.emacs.d/")
+	)
+       load-path))
 
 
-;; gtags mode
-(autoload 'gtags-mode "gtags" "" t)
-(setq gtags-mode-hook
-      '(lambda ()
-         (local-set-key "\M-t" 'gtags-find-tag)
-         (local-set-key "\M-r" 'gtags-find-rtag)
-         (local-set-key "\M-s" 'gtags-find-symbol)
-         (local-set-key "\C-t" 'gtags-pop-stack)
-         ))
-(add-hook 'c-mode-common-hook
-	  '(lambda()
-             (gtags-mode 1)
-	     (setq tab-width 4)
-             ))
 
-;; big ol' windows hacks
-(if is-windows 
-    (progn 
-      (require 'cygwin-mount)
-      (cygwin-mount-activate)
-      (add-hook 'comint-output-filter-functions
-                'shell-strip-ctrl-m nil t)
-      (add-hook 'comint-output-filter-functions
-                'comint-watch-for-password-prompt nil t)
-      (setq explicit-shell-file-name "bash.exe")
-      (setq shell-file-name explicit-shell-file-name)))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;  emacs 上でカラフルにdiff を表示する
+;;  http://www.clear-code.com/blog/2012/4/3.html
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; diffの表示方法を変更
+(defun diff-mode-setup-faces ()
+  ;; 追加された行は緑で表示
+  (set-face-attribute 'diff-added nil
+                      :foreground "white" :background "dark green")
+  ;; 削除された行は赤で表示
+  (set-face-attribute 'diff-removed nil
+                      :foreground "black" :background "dark gray")
+  ;; 文字単位での変更箇所は色を反転して強調
+  (set-face-attribute 'diff-refine-change nil
+                      :foreground nil :background nil
+                      :weight 'bold :inverse-video t))
+(add-hook 'diff-mode-hook 'diff-mode-setup-faces)
+
+;; diffを表示したらすぐに文字単位での強調表示も行う
+(defun diff-mode-refine-automatically ()
+  (diff-auto-refine-mode t))
+(add-hook 'diff-mode-hook 'diff-mode-refine-automatically)
+
+;; diff関連の設定
+(defun magit-setup-diff ()
+  ;; diffを表示しているときに文字単位での変更箇所も強調表示する
+  ;; 'allではなくtにすると現在選択中のhunkのみ強調表示する
+  (setq magit-diff-refine-hunk 'all)
+  ;; diff用のfaceを設定する
+  (diff-mode-setup-faces)
+  ;; diffの表示設定が上書きされてしまうのでハイライトを無効にする
+  (set-face-attribute 'magit-item-highlight nil :inherit nil))
+(add-hook 'magit-mode-hook 'magit-setup-diff)
+
