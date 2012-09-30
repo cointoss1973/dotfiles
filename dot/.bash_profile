@@ -1,4 +1,3 @@
-# -*- coding: utf-8-unix
 # base-files version 4.0-6
 # ~/.bash_profile: executed by bash(1) for login shells.
 
@@ -35,6 +34,3 @@ fi
 if [ -d "${HOME}/info" ]; then
     INFOPATH="${HOME}/info:${INFOPATH}"
 fi
-
-#remainlife.sh
-

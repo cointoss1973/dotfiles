@@ -1,13 +1,12 @@
 # -*- coding: utf-8-unix -*-
-
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
 # bash completion for the Mercurial distributed SCM
-if [ -f ~/hgrepo/hg/contrib/bash_completion ]; then
-	. ~/hgrepo/hg/contrib/bash_completion
+if [ -f ~/work/hg/contrib/bash_completion ]; then
+	. ~/work/hg/contrib/bash_completion
 fi
 
 
@@ -19,11 +18,11 @@ export MAKE_MODE=unix
 export LANG=ja_JP.UTF-8
 ##export LESSCHARSET=utf-8
 
-#PATH=./:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/bin:$PATH
-PATH=/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/bin:/cygdrive/c/Meadow/bin:$PATH
+#PATH=/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/bin:$PATH
 export PATH
 export PAGER=less
-export EDITOR=meadow
+#export EDITOR=meadow
+export EDITOR=emacs
 
 #PS1="\w/\t> "
 
@@ -42,9 +41,10 @@ alias ls="ls -CF --color=auto --show-control-chars"
 #alias mv="mv -vi"
 #alias rm="rm -vi"
 alias more="less"
-alias v=$EDITOR
+alias v="runemacs"
 
 alias h="history"
+#alias hg=/c/Python26/Scripts/hg
 
 # GNU Global
 funcs()
