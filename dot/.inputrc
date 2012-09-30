@@ -1,4 +1,4 @@
-# 
+# -*- coding: utf-8-unix -*- 
 set kanji-code sjis
 set input-meta on
 set output-meta on

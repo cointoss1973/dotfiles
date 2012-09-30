@@ -1,3 +1,4 @@
+# -*- coding: utf-8-unix -*-
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
