@@ -1,4 +1,4 @@
-; -*- coding : utf-8-unix -*-
+; -*- coding: utf-8-unix -*-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; load-path に追加する
@@ -46,4 +46,6 @@
   ;; diffの表示設定が上書きされてしまうのでハイライトを無効にする
   (set-face-attribute 'magit-item-highlight nil :inherit nil))
 (add-hook 'magit-mode-hook 'magit-setup-diff)
+
+
 
