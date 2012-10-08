@@ -12,10 +12,4 @@ function diff_dotfiles
     done
 }
 
-if [[ $ARCH = MINGW* ]]; then
-    # Oh... No support symblic link system
-    diff_dotfiles
-else
-    echo No Need. Maybe symbolic link support system.
-fi
-
+diff_dotfiles
