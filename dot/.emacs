@@ -1,14 +1,10 @@
 ; -*- coding: utf-8-unix -*-
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; load-path に追加する
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(setq load-path
-      (append
-       (list
-	(expand-file-name "~/.emacs.d/")
-	)
-       load-path))
+;; font
+;(set-frame-font "ricty-13.5")
+(set-frame-font "Ricty Discord-15")
+
+;; load-path を追加する関数を定義
 
 
 
@@ -46,6 +42,4 @@
   ;; diffの表示設定が上書きされてしまうのでハイライトを無効にする
   (set-face-attribute 'magit-item-highlight nil :inherit nil))
 (add-hook 'magit-mode-hook 'magit-setup-diff)
-
-
 
