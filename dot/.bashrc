@@ -23,7 +23,7 @@ export LANG=ja_JP.UTF-8
 PATH=/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/bin:/cygdrive/c/Meadow/bin:$PATH
 export PATH
 export PAGER=less
-export EDITOR=meadow
+export EDITOR=emacs
 
 #PS1="\w/\t> "
 
