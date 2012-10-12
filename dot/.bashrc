@@ -41,7 +41,7 @@ alias ls="ls -CF --color=auto --show-control-chars"
 #alias mv="mv -vi"
 #alias rm="rm -vi"
 alias more="less"
-alias v="runemacs"
+alias v=emacs
 
 alias h="history"
 #alias hg=/c/Python26/Scripts/hg
