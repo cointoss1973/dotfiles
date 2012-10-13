@@ -1,5 +1,7 @@
 ; -*- coding: utf-8-unix -*-
 
+;; global setting
+
 ;; font
 ;(set-frame-font "ricty-13.5")
 (set-frame-font "Ricty Discord-15")
