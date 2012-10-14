@@ -19,6 +19,8 @@
 ;; 引数のディレクトリとそのサブディレクトリをload-pathに追加
 (add-to-load-path  "elisp" "conf" "public_repos")
 
+(setq vc-follow-symlinks t)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;  emacs 上でカラフルにdiff を表示する
 ;;  http://www.clear-code.com/blog/2012/4/3.html
