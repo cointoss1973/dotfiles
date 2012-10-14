@@ -1,12 +1,12 @@
 #!/bin/bash
 
-
-for src in `find dot -name .\*`
+files=".bash_profile .bashrc .emacs .emacs.d .gitconfig .hgrc .inputrc .minttyrc .vimrc"
+for src in $files
 do
     dst=${src##*/}
     rm -f "$HOME/$dst"
-    echo dotfiles/$src "->" $HOME/$dst
-    ln -s "$HOME/dotfiles/$src" "$HOME/$dst"
+    echo dotfiles/dot/$src "->" $HOME/$dst
+    ln -s "$HOME/dotfiles/dot/$src" "$HOME/$dst"
 done
 
 echo "please log off or source ~/.bash_profile"
