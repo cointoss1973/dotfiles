@@ -21,6 +21,12 @@
 
 (setq vc-follow-symlinks t)
 
+;; auto-installの設定
+(when (require 'auto-install nil t)
+  (setq auto-install-directory "~/.emacs.d/elisp/")
+  (auto-install-update-emacswiki-package-name t)
+  (auto-install-compatibility-setup))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;  emacs 上でカラフルにdiff を表示する
 ;;  http://www.clear-code.com/blog/2012/4/3.html
