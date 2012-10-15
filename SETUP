@@ -1,6 +1,6 @@
 #!/bin/bash
 
-files=".bash_profile .bashrc .emacs .emacs.d .gitconfig .hgrc .inputrc .minttyrc .vimrc"
+files=".bash_profile .bashrc .emacs.d .gitconfig .hgrc .inputrc .minttyrc .vimrc"
 for src in $files
 do
     dst=${src##*/}
