@@ -2,9 +2,9 @@
 
 ;; global setting
 
-;; font
 ;(set-frame-font "ricty-13.5")
 (set-frame-font "Ricty Discord-15")
+(setq vc-follow-symlinks t)
 
 ;; load-path を追加する関数を定義
 (defun add-to-load-path (&rest paths)
@@ -19,13 +19,22 @@
 ;; 引数のディレクトリとそのサブディレクトリをload-pathに追加
 (add-to-load-path  "elisp" "conf" "public_repos")
 
-(setq vc-follow-symlinks t)
+
+;; package-archivesの設定
+(when (require 'package nil t)
+  (add-to-list 'package-archives
+	       '("marmalade" . "http://marmalade-repo.org/packages/") t)
+  (add-to-list 'package-archives
+	       '("ELPA" . "http://tromey.com/elpa/"))
+  (package-initialize))
+
 
 ;; auto-installの設定
 (when (require 'auto-install nil t)
   (setq auto-install-directory "~/.emacs.d/elisp/")
   (auto-install-update-emacswiki-package-name t)
   (auto-install-compatibility-setup))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;  emacs 上でカラフルにdiff を表示する
